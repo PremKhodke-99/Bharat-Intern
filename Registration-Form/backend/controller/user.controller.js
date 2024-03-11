@@ -5,13 +5,17 @@ const UserServiceInstances = new UserService();
 const registerNewUser = async (req, res) => {
     const { body } = req;
     const result = await UserServiceInstances.create(body);
-    res.json(result);
+    console.log(result);
+    res.send(result);
 }
 
 const loginUser = async (req, res) => {
     const { body } = req;
     const result = await UserServiceInstances.login(body);
-    res.json(result);
+    if (result.length)
+        res.send(result);
+    else
+        res.status(404).json({ message: "Invalid Email or Password" })
 }
 
 module.exports = {

@@ -14,19 +14,7 @@ class UserService {
 
     login = async (body) => {
         const { email, password } = body;
-        const result = await Users.findOne({ email: email })
-            .then(user => {
-                if (user) {
-                    if (password === user.password) {
-                        res.send({ message: "Login Successfull", user: user })
-                    } else {
-                        res.send({ message: "Password didn't" })
-                    }
-                } else {
-                    res.end({ message: "user not registered" })
-                }
-            })
-
+        const result = await Users.find({ email: email, password: password });
         return result;
     }
 
