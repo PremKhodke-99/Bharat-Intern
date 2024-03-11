@@ -85,7 +85,7 @@
             background-color: rgb(226, 120, 14);
             border: none;
             border-radius: 5px;
-            color: aliceblue;
+            color: aliceblue; 
             font-size: 16px;
             cursor: pointer;
         }
@@ -94,15 +94,14 @@
 
 <body>
     <section class="wrapper-class">
-
         <div class="registration-model">
             <h1>Login</h1>
-            <form class="form" method="get" action="/loginUser">
+            <form method="get" class="form" action="login">
                 <label>Email: </label><br />
-                <input type="email" placeholder="Enter your Email">
+                <input type="email" name="email" placeholder="Enter your Email">
                 <label>Password: </label><br />
-                <input type="password" placeholder="Enter your Password">
-                <button>Login</button>
+                <input type="password" name="password" placeholder="Enter your Password">
+                <button type="submit">Login</button>
             </form>
         </div>
     </section>

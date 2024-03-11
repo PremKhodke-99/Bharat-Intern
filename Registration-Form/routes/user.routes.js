@@ -14,18 +14,16 @@ router.post("/register", async (req, res) => {
         console.log(result);
         res.redirect("/login")
     }
-
-});
+}); 
 
 router.get("/loginUser", async (req, res) => {
-
     const { body } = req;
     const result = await UserServiceInstances.login(body);
-    if (result) {
+    if (!result) {
         console.log(result)
         res.redirect("/homepage")
     } else {
-        res.send({ message: "Email not registered" })
+        res.redirect("/error")
     }
 });
 

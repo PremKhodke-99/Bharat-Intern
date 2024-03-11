@@ -19,8 +19,14 @@ class UserService {
     }
 
     login = async (body) => {
+        console.log(body);
         const { email, password } = body;
-        const result = await Users.find({ email, password });
+        const result = await Users.findOne({
+            $and: [
+                { email: email },
+                { password: password }
+            ]
+        });
         console.log(result)
         return result;
     }
