@@ -14,10 +14,11 @@ mongoose.connect(mongoDB_url)
 const app = express();
 const port = 8082;
 
+
 app.use(express.json());
 app.use(express.urlencoded());
 app.use(cors());
-app.use('/user', userRoutes);
+app.use('/', userRoutes);
 
 app.listen(port, () => {
     console.log('Listening at', port)
