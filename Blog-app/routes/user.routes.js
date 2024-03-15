@@ -9,7 +9,6 @@ router.get("/signup", (req, res) => {
     return res.render("signup");
 })
 
-
 router.post('/signin', async (req, res) => {
     const { email, password } = req.body;
     try {
@@ -23,16 +22,18 @@ router.post('/signin', async (req, res) => {
     }
 })
 
+router.get('/logout', (req, res) => {
+    res.clearCookie('token').redirect("/");
+})
+
 router.post("/signup", async (req, res) => {
     const { fullName, email, password } = req.body;
     await User.create({
-        fullName, email, password
+        fullName,
+        email,
+        password
     });
     return res.redirect("/")
-})
-
-router.get('/logout', (req, res) =>{
-   res.clearCookie('token').redirect("/");
 })
 
 module.exports = router;
