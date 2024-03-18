@@ -1,3 +1,4 @@
+require('dotenv').config();
 const path = require("path");
 const express = require("express");
 const mongoose = require("mongoose");
@@ -11,6 +12,9 @@ const { checkForAuthenticationCookie } = require("./middleware/authentication");
 
 const app = express();
 const PORT = 8000;
+
+const username = process.env.MONGODB_USERNAME;
+const password = process.env.MONGODB_PASSWORD;
 
 mongoose.connect(`mongodb+srv://${username}:${password}@cluster0.8d5atas.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`)
     .then(() => console.log("Connected to DB Online"))
