@@ -1,5 +1,5 @@
 const JWT = require("jsonwebtoken");
-const secret = "thisis$ecretKey";
+const secret = "thisis$ecretKey@123";
 
 function createTokenForUser(user){
     const payload = {
@@ -7,7 +7,7 @@ function createTokenForUser(user){
         email: user.email,
         profileImg: user.profileImg,
         role: user.role,
-    }
+    };
     const token = JWT.sign(payload, secret);
     return token;
 }
