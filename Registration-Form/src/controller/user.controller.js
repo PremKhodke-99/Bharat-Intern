@@ -43,7 +43,7 @@ const login = async (req, res) => {
             res.render("error")
         }
     } catch (err) {
-        res.status(400).send("Invalid Email")
+        res.render("error")
     }
 }
 
