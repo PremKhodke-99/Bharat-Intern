@@ -1,9 +1,11 @@
 const mongoose = require('mongoose');
 const validator = require('validator');
 
-
-const userSchema = new mongoose.Schema({
-    name: { type: String },
+const RegisterSchema = new mongoose.Schema({
+    name: { 
+        type: String,
+        required: true
+    },
     email: {
         type: String,
         required: true,
@@ -13,8 +15,8 @@ const userSchema = new mongoose.Schema({
     password: {
         type: String,
         required: true
-    }
-})
+    },
+});
 
-const userModel = mongoose.model("Users", userSchema);
-module.exports = userModel;
+const Register = mongoose.model("Register", RegisterSchema);
+module.exports = Register;

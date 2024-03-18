@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {{>header}}
+    <title>Login & Registration Form</title>
+</head>
+
+<body>
+    <div class="container">
+        <input type="checkbox" id="check">
+        <div class="login form">
+            <header>Login</header>
+            <form action="/login" method="post">
+                <input type="text" name="email" placeholder="Enter your email">
+                <input type="password" name="password" placeholder="Enter your password">
+                <input type="submit" class="button" value="Login">
+            </form>
+            <div class="signup">
+                <span class="signup">Don't have an account?
+                    <label for="check">Signup</label>
+                </span>
+            </div>
+        </div> 
+
+        <div class="registration form">
+            <header>Signup</header>
+            <form action="/register" method="post">
+                <input type="text" name="name" placeholder="Enter your Name">
+                <input type="email" name="email" placeholder="Enter your email">
+                <input type="password" name="password" placeholder="Create a password">
+                <input type="submit" class="button" value="Register">
+            </form>
+            <div class="signup">
+                <span class="signup">Already have an account?
+                    <label for="check">Login</label>
+                </span>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+
+
+
+{{!--
+
+<body>
+    {{>navbar}}
+    <section class="wrapper-class">
+        <div class="registration-model">
+            <h1>Registration Form</h1>
+            <form method="post" class="form" action="/register">
+                <label>Full Name: </label><br />
+                <input type="text" name="name" placeholder="Enter your name">
+                <label>Email: </label><br />
+                <input type="email" name="email" placeholder="Enter your Email">
+                <label>Password: </label><br />
+                <input type="password" name="password" placeholder="Enter your Password">
+                <button type="submit">Register</button>
+            </form>
+        </div>
+    </section>
+</body>
+
+ --}}
